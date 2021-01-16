@@ -1,5 +1,17 @@
 package model;
 
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.PrintWriter;
+import java.util.Scanner;
+
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
 public class Book {
 //fields of the class
     private String title;
@@ -8,77 +20,36 @@ public class Book {
     private double price;
     private int publicationYear;
 
-//setters, mutators
+    //setters, mutators
     // setter sets a new value to a field
     // access specifier, return type, method name, argument list
         //argument type, argument name
     // argument or parameter
 
-    public void setTitle(String title) {
-        this.title = title;
-    }
-
-    public void setAuthor(String author) {
-        this.author = author;
-    }
-
-    public void setPageNumber(int pageNumber) {
-        this.pageNumber = pageNumber;
-    }
-
-    public void setPrice(double price) {
-        this.price = price;
-    }
-
-    public void setPublicationYear(int publicationYear) {
-        this.publicationYear = publicationYear;
-    }
-
-
     //getters
 
 
-    public String getTitle() {
-        return title;
-    }
-
-    public String getAuthor() {
-        return author;
-    }
-
-    public int getPageNumber() {
-        return pageNumber;
-    }
-
-    public double getPrice() {
-        return price;
-    }
-
-    public int getPublicationYear() {
-        return publicationYear;
-    }
-
-
-    @Override
-    public String toString() {
-        return "Book{" +
-                "title='" + title + '\'' +
-                ", author='" + author + '\'' +
-                ", pageNumber=" + pageNumber +
-                ", price=" + price +
-                ", publicationYear=" + publicationYear +
-                '}';
-    }
-
-
     // constructor
+   // within parenthesis  parameters or arguments
+    //type name
 
 
-    public Book(String title, String author, int pageNumber, double price, int publicationYear) {
-        this.title = title;
-        this.author = author;
-        this.pageNumber = pageNumber;
-        this.price = price;
-        this.publicationYear = publicationYear;
+    public void save(String filename) throws FileNotFoundException {
+        File file = new File(filename);
+        PrintWriter printWriter = new PrintWriter(file);
+        printWriter.println(this.title );
+        printWriter.close();
     }
+
+    //method signature
+    public void load(String filename) throws FileNotFoundException {
+        File file = new File(filename);
+        Scanner scanner = new Scanner(file);
+        String title = scanner.nextLine();
+        this.title=title;
+
+    }
+
+
+
 }

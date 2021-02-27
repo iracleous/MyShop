@@ -7,6 +7,7 @@ import model.Book;
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
 
 public class GuiLibrary {
     private JPanel LibraryPanel;
@@ -19,8 +20,11 @@ public class GuiLibrary {
 
     private JButton insertBookButton;
 
-    public GuiLibrary() {
+    private ArrayList<Book> books;
 
+
+    public GuiLibrary(ArrayList<Book> books) {
+        this.books = books;
 
         insertBookButton.addActionListener(new ActionListener() {
             @Override
@@ -34,6 +38,7 @@ public class GuiLibrary {
                         );
 
                 JOptionPane.showMessageDialog(null,book.toString());
+                books.add(book);
 
 
 //                JOptionPane.showMessageDialog(null,

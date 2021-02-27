@@ -1,21 +1,21 @@
 
-Z	java:S106o"9Replace this use of System.out or System.err by a logger.(„Ò‹üùÿÿÿÿ8îûª·÷.
+Z	java:S106m"9Replace this use of System.out or System.err by a logger.(ü’¼üÿÿÿÿ8îûª·÷.
+U	java:S106i"9Replace this use of System.out or System.err by a logger.(°¿öŞ8îûª·÷.
+Z	java:S106j"9Replace this use of System.out or System.err by a logger.(„Ò‹üùÿÿÿÿ8îûª·÷.
 ˜
-java:S1130%"vRemove the declaration of thrown exception 'java.io.FileNotFoundException', as it cannot be thrown from method's body.(Éşâúÿÿÿÿ8öåğÃ÷.
-U	java:S106P"9Replace this use of System.out or System.err by a logger.(ÁõÀõ8îûª·÷.
-T	java:S106g"9Replace this use of System.out or System.err by a logger.(Â­—x8îûª·÷.
+java:S1130$"vRemove the declaration of thrown exception 'java.io.FileNotFoundException', as it cannot be thrown from method's body.(Éşâúÿÿÿÿ8’ë»Ùù.
+U	java:S106O"9Replace this use of System.out or System.err by a logger.(ÁõÀõ8îûª·÷.
 f
-java:S3252"IUse static access with "javax.swing.WindowConstants" for "EXIT_ON_CLOSE".(ÒÛ´ç8€ÊÇ·÷.
-U	java:S106j"9Replace this use of System.out or System.err by a logger.(°¿öŞ8îûª·÷.
-Z	java:S106I"9Replace this use of System.out or System.err by a logger.(¹‘ƒªÿÿÿÿÿ8îûª·÷.
-[	java:S106‰"9Replace this use of System.out or System.err by a logger.(Ş™ÆÅøÿÿÿÿ8 £ëÃ÷.
-M
-java:S1172%"+Remove this unused method parameter "args".(Éşâúÿÿÿÿ8îûª·÷.
-Z	java:S106f"9Replace this use of System.out or System.err by a logger.(‘äíèúÿÿÿÿ8îûª·÷.
-Z	java:S106n"9Replace this use of System.out or System.err by a logger.(ü’¼üÿÿÿÿ8îûª·÷.
-R
-java:S1481|"5Remove this unused "bookMaximumPrice" local variable.(§…´ã8ø«íÃ÷.
+java:S3252"IUse static access with "javax.swing.WindowConstants" for "EXIT_ON_CLOSE".(ÒÛ´ç8õè±Ùù.
+T	java:S106f"9Replace this use of System.out or System.err by a logger.(Â­—x8îûª·÷.
 a
-java:S1854|"DRemove this useless assignment to local variable "bookMaximumPrice".(§…´ã8àÊëÃ÷.
-[	java:S106ˆ"9Replace this use of System.out or System.err by a logger.(‚É…ßıÿÿÿÿ8îûª·÷.
-Z	java:S106k"9Replace this use of System.out or System.err by a logger.(„Ò‹üùÿÿÿÿ8îûª·÷.
+java:S1854{"DRemove this useless assignment to local variable "bookMaximumPrice".(§…´ã8àÊëÃ÷.
+[	java:S106‡"9Replace this use of System.out or System.err by a logger.(‚É…ßıÿÿÿÿ8îûª·÷.
+Z	java:S106H"9Replace this use of System.out or System.err by a logger.(¹‘ƒªÿÿÿÿÿ8îûª·÷.
+R
+java:S1481{"5Remove this unused "bookMaximumPrice" local variable.(§…´ã8ø«íÃ÷.
+M
+java:S1172$"+Remove this unused method parameter "args".(Éşâúÿÿÿÿ8îûª·÷.
+Z	java:S106e"9Replace this use of System.out or System.err by a logger.(‘äíèúÿÿÿÿ8îûª·÷.
+Z	java:S106n"9Replace this use of System.out or System.err by a logger.(„Ò‹üùÿÿÿÿ8îûª·÷.
+[	java:S106ˆ"9Replace this use of System.out or System.err by a logger.(Ş™ÆÅøÿÿÿÿ8 £ëÃ÷.

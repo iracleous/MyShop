@@ -3,6 +3,8 @@ package application;
 import model.Book;
 
 import javax.swing.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.Comparator;
@@ -12,12 +14,56 @@ import java.util.NoSuchElementException;
 public class Main {
 
 
-    public static void main(String[] args) {
+       public static void main(String[] args) {
+
+          ArrayList<Book> books = new ArrayList<>();
+
+
         JFrame jFrame = new JFrame("My graphic application");
         jFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
-        GuiLibrary guiLibrary = new GuiLibrary();
-        jFrame.setContentPane(guiLibrary.getLibraryPanel());
+
+        JMenuBar jMenuBar = new JMenuBar();
+        JMenu   menuLibrary    = new JMenu("Library");
+        jMenuBar.add(menuLibrary);
+
+           JMenu   menuHelp    = new JMenu("Help");
+           jMenuBar.add(menuHelp);
+
+
+        JMenuItem insertBookMenuItem = new JMenuItem("Insert Book");
+         insertBookMenuItem.addActionListener(new ActionListener() {
+             @Override
+             public void actionPerformed(ActionEvent e) {
+                  GuiLibrary guiLibrary = new GuiLibrary( books);
+                   jFrame.setContentPane(guiLibrary.getLibraryPanel());
+                   jFrame.revalidate();
+             }
+         });
+          menuLibrary.add(insertBookMenuItem);
+
+        JMenuItem searchBookMenuItem = new JMenuItem("Search Book");
+
+           searchBookMenuItem.addActionListener(new ActionListener() {
+               @Override
+               public void actionPerformed(ActionEvent e) {
+                   Searchform searchform = new Searchform(books);
+                   jFrame.setContentPane(searchform.getSearchPanel());
+                   jFrame.revalidate();
+               }
+           });
+
+           menuLibrary.add(searchBookMenuItem);
+
+           JMenuItem informationMenuItem = new JMenuItem("Information");
+           menuHelp.add(informationMenuItem);
+
+           JMenuItem aboutMenuItem = new JMenuItem("About");
+           menuHelp.add(aboutMenuItem);
+
+        jFrame.setJMenuBar(jMenuBar);
+
+
 
         jFrame.setSize(500,500);
 

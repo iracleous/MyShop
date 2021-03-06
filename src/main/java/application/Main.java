@@ -14,69 +14,57 @@ import java.util.NoSuchElementException;
 public class Main {
 
 
-       public static void main(String[] args) {
+    public static void main(String[] args) {
 
-          ArrayList<Book> books = new ArrayList<>();
-
-
+        ArrayList<Book> books = new ArrayList<>();
         JFrame jFrame = new JFrame("My graphic application");
         jFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
-
         JMenuBar jMenuBar = new JMenuBar();
-        JMenu   menuLibrary    = new JMenu("Library");
+        JMenu menuLibrary = new JMenu("Library");
         jMenuBar.add(menuLibrary);
 
-           JMenu   menuHelp    = new JMenu("Help");
-           jMenuBar.add(menuHelp);
-
+        JMenu menuHelp = new JMenu("Help");
+        jMenuBar.add(menuHelp);
 
         JMenuItem insertBookMenuItem = new JMenuItem("Insert Book");
-         insertBookMenuItem.addActionListener(new ActionListener() {
-             @Override
-             public void actionPerformed(ActionEvent e) {
-                  GuiLibrary guiLibrary = new GuiLibrary( books);
-                   jFrame.setContentPane(guiLibrary.getLibraryPanel());
-                   jFrame.revalidate();
-             }
-         });
-          menuLibrary.add(insertBookMenuItem);
+        insertBookMenuItem.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                GuiLibrary guiLibrary = new GuiLibrary(books);
+                jFrame.setContentPane(guiLibrary.getLibraryPanel());
+                jFrame.revalidate();
+            }
+        });
+        menuLibrary.add(insertBookMenuItem);
 
         JMenuItem searchBookMenuItem = new JMenuItem("Search Book");
 
-           searchBookMenuItem.addActionListener(new ActionListener() {
-               @Override
-               public void actionPerformed(ActionEvent e) {
-                   Searchform searchform = new Searchform(books);
-                   jFrame.setContentPane(searchform.getSearchPanel());
-                   jFrame.revalidate();
-               }
-           });
+        searchBookMenuItem.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                Searchform searchform = new Searchform(books);
+                jFrame.setContentPane(searchform.getSearchPanel());
+                jFrame.revalidate();
+            }
+        });
 
-           menuLibrary.add(searchBookMenuItem);
+        menuLibrary.add(searchBookMenuItem);
 
-           JMenuItem informationMenuItem = new JMenuItem("Information");
-           menuHelp.add(informationMenuItem);
+        JMenuItem informationMenuItem = new JMenuItem("Information");
+        menuHelp.add(informationMenuItem);
 
-           JMenuItem aboutMenuItem = new JMenuItem("About");
-           menuHelp.add(aboutMenuItem);
+        JMenuItem aboutMenuItem = new JMenuItem("About");
+        menuHelp.add(aboutMenuItem);
 
         jFrame.setJMenuBar(jMenuBar);
 
 
-
-        jFrame.setSize(500,500);
+        jFrame.setSize(500, 500);
 
         jFrame.setVisible(true);
 
     }
-
-
-
-
-
-
-
 
 
     public static void main2(String[] args) throws FileNotFoundException {
@@ -115,15 +103,14 @@ public class Main {
 
         // printing the titles only
         for (int i = 0; i < books.size(); i++)
-            System.out.println(books.get(i) );
+            System.out.println(books.get(i));
 
 
         //aggregations
 
 
         // print the number of available books
-        System.out.println("the available books "+books.size());
-
+        System.out.println("the available books " + books.size());
 
 
         // calculation of the total price
@@ -151,11 +138,11 @@ public class Main {
         System.out.println("Books before sorting");
         System.out.println(books);
         // sorting the books by price
-        books.sort( (b1, b2) -> (int) (b1.getPrice()-b2.getPrice()) );
+        books.sort((b1, b2) -> (int) (b1.getPrice() - b2.getPrice()));
         System.out.println("Books after sorting");
         System.out.println(books);
 
-        books.sort(Comparator.comparingDouble(Book::getPrice) );
+        books.sort(Comparator.comparingDouble(Book::getPrice));
 
 
         // find maximum price
@@ -167,19 +154,19 @@ public class Main {
 
         // find the book with the maximum price
         Book bookMaximumPrice = books.stream()
-                .max(Comparator.comparingDouble(Book::getPrice) )
+                .max(Comparator.comparingDouble(Book::getPrice))
                 .orElseThrow(NoSuchElementException::new);
 
 
         // find minimum
-        double minPriceBook  = books.stream()
+        double minPriceBook = books.stream()
                 .mapToDouble(Book::getPrice)
                 .min()
                 .orElseThrow(NoSuchElementException::new);
 
 
-        System.out.println("The maximum price is "+maxPriceBook);
-        System.out.println("The minimum price is "+minPriceBook);
+        System.out.println("The maximum price is " + maxPriceBook);
+        System.out.println("The minimum price is " + minPriceBook);
 
 
     }

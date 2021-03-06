@@ -9,3 +9,7 @@ Y
 )src/main/java/application/GuiLibrary.form,d\d\dd3480f5407e8401c5481aecaf1ffde146864302
 Y
 )src/main/java/application/GuiLibrary.java,c\4\c4204edec09511628507e8298049e32db1475880
+Y
+)src/main/java/application/Searchform.form,9\4\946560e7526d12a48bd1a17a4d07f4d85f10c9a6
+Y
+)src/main/java/application/Searchform.java,7\8\784848c0a08ea7a5b4b7dae59870a5f54f04bf17

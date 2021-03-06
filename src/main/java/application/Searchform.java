@@ -19,12 +19,7 @@ public class Searchform {
             @Override
             public void actionPerformed(ActionEvent e) {
 
-
-
                 JOptionPane.showMessageDialog(null, books.toString()) ;
-
-
-
 
             }
         });
